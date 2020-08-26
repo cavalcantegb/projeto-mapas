@@ -1,5 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Bem vindo a página de carga de dados!")
-
+    return render(request, 'index.html')
