@@ -8,4 +8,10 @@ initial-scale=1">
 </head>
 <body>
     <h1>Bem vindo à pagina de carga de dados!</h1>
+    <div>
+        <form action="upload-spreadsheet" method="POST">{% csrf_token %}
+            <input type='file'>
+            </br><input type="submit" value="OK">
+        </form>
+    </div>
 </body>
