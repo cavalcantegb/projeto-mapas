@@ -9,9 +9,11 @@ initial-scale=1">
 <body>
     <h1>Bem vindo à pagina de carga de dados!</h1>
     <div>
-        <form action="upload-spreadsheet" method="POST">{% csrf_token %}
-            <input type='file'>
-            </br><input type="submit" value="OK">
+        <form action="{% url "carga:upload_file" %}" enctype="multipart/form-data" method="POST">{% csrf_token %}
+            <label for="file">File:</label>
+            <input type="file" name="file" id="id_file">
+            </br>
+            <input type="submit" name="submit" value="submit">
         </form>
     </div>
 </body>
