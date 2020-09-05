@@ -10,17 +10,25 @@ services:
       - POSTGRES_DB=spostgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+      - "54320:5432"
   web:
     entrypoint: /entrypoint.sh
     container_name: carga-app
     build: .
-    command:
-      - python manage.py migrate
-      - python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+  metabase:
+    container_name: carga-metabase
+    image: metabase/metabase
+    volumes:
+      - ~/metabase-data:/metabase-data
+    ports:
+      - "3000:3000"
     depends_on:
       - db
 volumes:
