@@ -9,10 +9,22 @@ initial-scale=1">
 <body>
     <h1>Bem vindo à pagina de carga de dados!</h1>
     <div>
-        <form action="{% url "carga:upload_file" %}" enctype="multipart/form-data" method="POST">{% csrf_token %}
-            <label for="file">File:</label>
-            <input type="file" name="file" id="id_file">
-            </br>
+        <form action="{% url "carga:upload_file" %}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.file }}
+        </br>
+        <p>Por favor, selecione a tabela a ser populada:</p>
+        {{ form.table }}
+        </br>
+<!--            <label for="file">File:</label>-->
+<!--            <input type="file" name="file" id="id_file">-->
+<!--            </br>-->
+<!--            <p>Por favor, selecione a tabela a ser populada:</p>-->
+<!--            <input type="radio" id="project" name="table" value="project">-->
+<!--            <label for="project">Projeto</label>-->
+<!--            <input type="radio" id="agent" name="table" value="agent">-->
+<!--            <label for="agent">Agente</label>-->
+<!--            <br>-->
             <input type="submit" name="submit" value="submit">
         </form>
     </div>
