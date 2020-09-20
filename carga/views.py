@@ -4,7 +4,7 @@ from .forms import UploadFileForm
 from openpyxl import load_workbook
 from io import BytesIO
 from .services import Service
-
+import json
 
 def index(request):
     form = UploadFileForm
@@ -28,7 +28,8 @@ def upload_file(request):
             if form_data['table'] == 'project':
                 objects_list = Service.parse_projects(ws)
             elif form_data['table'] == 'agent':
-                objects_list = Service.parse_agent(ws)
+                agents_columns = Service.fill_agent_dict(ws)
+                objects_list = Service.parse_agent(ws, agents_columns)
             else:
                 objects_list = None
 
@@ -36,10 +37,27 @@ def upload_file(request):
                 print("\tdentro do if")
                 for obj in objects_list:
                     print("\t\t{}".format(obj.__str__()))
-                    if obj.save():
-                        print(obj.__str__())
+                    try:
+                        if obj.save():
+                            print(obj.__str__())
+                    except:
+                        None
             return HttpResponseRedirect('/carga/valeu')
     else:
         form = UploadFileForm()
 
     return render(request, 'index.html', {'form': form})
+
+"""
+    This method should be available only if there is no data in the database or user wants to load the agent data from
+    Mapa Cultural do Ceará.
+"""
+def carga_agents(request):
+    dados_agentes = open('data/agent_data.json', encoding='utf-8')
+    agents_json = json.load(dados_agentes)
+    agents = []
+    agents = Service.parse_agent_json1(agents_json)
+
+    for agent in agents:
+        if agent.is_valid():
+            agent.save
