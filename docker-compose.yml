@@ -33,3 +33,4 @@ services:
       - db
 volumes:
     postgres_database:
+    metabase-data:

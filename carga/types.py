@@ -11,4 +11,4 @@ table_type = [
 location_type = [
     ("capital", "Capital"),
     ("interior", "Interior")
-]
+] 

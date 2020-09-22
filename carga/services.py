@@ -1,9 +1,47 @@
 from .dictionaries import projects_dict_letter, agents_dict
 from .models import Project, Agent
 from .utils import parse_location
+import json
 
+
+agent_files_cities = [
+    '2_a_Fortaleza', '2_b_Juazeiro', '2_c_Maracanau',
+    '2_d_Crato', '2_e_Caucaia', '2_f_Barbalha',
+    '2_h_Limoeiro_Do_Norte', '2_i_Quixada', '2_j_Quixeramobim',
+    '2_k_Sobral', '2_l_Eusébio', '2_m_Itapipoca',
+    '2_n_Russas', '2_o_Horizonte', '2_p_Jijoca_de_Jericoacoara',
+    '2_q_Paracuru', '2_r_Senador_Pompeu', '2_s_Tiangua',
+    '2_t_Varjota', '2_u_Acopiara'
+]
 
 class Service:
+
+    @staticmethod
+    def load_agents2():
+        agents = []
+        for agent_file in agent_files_cities:
+            data = open('data\{}'.format(agent_file), encoding='utf-8')
+            agent_json = json.load(data)
+            for _agent in agent_json:
+                agent = Agent()
+                agent.agent_identifier = _agent['id']
+                agent.name = _agent['name']
+                agent.latitude = _agent['location']['latitude']
+                agent.longitude = _agent['location']['longitude']
+                agent.created_at = _agent['createTimestamp']['date']
+                agent.updated_at = _agent['updateTimestamp']['date']
+                agent.parent_entity = _agent['parent']
+                agent.mesoregion = _agent['geoMesorregiao']
+                agent.microregion = _agent['geoMicrorregiao']
+                agent.city = _agent['geoMunicipio']
+                agent.account_type = _agent['type']['name']
+                agent.website = _agent['site']
+                agent.facebook = _agent['facebook']
+                agent.twitter = _agent['twitter']
+                agent.google_plus = _agent['googleplus']
+                agent.instagram = _agent['instagram']
+
+                agents.append(agent)
 
     @staticmethod
     def fill_agent_dict(worksheet):
