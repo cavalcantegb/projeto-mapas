@@ -220,13 +220,17 @@ class Service:
 
     @staticmethod
     def parse_agent_json1(agents):
-        agents = []
+        _agents = []
         for _agent in agents:
             if _agent is not None:
                 agent = Agent()
-                agent.Id = _agent['id']
+                agent.agent_identifier = _agent['id']
+                agent.name = _agent['name']
                 agent.latitude = _agent['location']['latitude']
                 agent.longitude = _agent['location']['longitude']
                 agent.created_at = _agent['createTimestamp']['date']
                 agent.parent_entity = _agent['parent']
                 agent.city = _agent['geoMunicipio']
+                _agents.append(agent)
+                print(agent)
+        return _agents

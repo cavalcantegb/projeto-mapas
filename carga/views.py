@@ -10,6 +10,8 @@ def index(request):
     form = UploadFileForm
     return render(request, 'index.html', {'form': form})
 
+def agentes(request):
+    return render(request, 'carga_agentes.html')
 
 def valeu(request):
     return render(request, 'valeu.html')
@@ -53,11 +55,24 @@ def upload_file(request):
     Mapa Cultural do Ceará.
 """
 def carga_agents(request):
-    dados_agentes = open('data/agent_data.json', encoding='utf-8')
-    agents_json = json.load(dados_agentes)
-    agents = []
-    agents = Service.parse_agent_json1(agents_json)
+    if request.method == 'POST':
+        dados_agentes = open('data/agent_data.json', encoding='utf-8')
+        agents_json = json.load(dados_agentes)
+        agents = []
+        agents = Service.parse_agent_json1(agents_json)
 
-    for agent in agents:
-        if agent.is_valid():
-            agent.save
+        for agent in agents:
+            print(agent)
+            if agent is not None:
+                agent.save()
+
+    if len(agents) > 0:
+        HttpResponseRedirect('/carga/agentes')
+
+    return HttpResponseRedirect('/carga/valeu')
+
+"""
+
+"""
+# def carga_resultado(request):
+#     if request.method == 'POST':

@@ -7,3 +7,8 @@ table_type = [
     ("project", "Projeto"),
     ("agent", "Agente"),
 ]
+
+location_type = [
+    ("capital", "Capital"),
+    ("interior", "Interior")
+]

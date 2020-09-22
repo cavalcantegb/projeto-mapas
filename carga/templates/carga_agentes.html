@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <Title>Carga de dados</Title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, 
+initial-scale=1">
+</head>
+<body>
+    <h1>Bem vindo à pagina de carga de agente!</h1>
+    <div>
+        <form action="{% url "carga:carga_agents" %}" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Carregar dados!">
+        </form>
+</body>

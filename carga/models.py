@@ -1,5 +1,5 @@
 from django.db import models
-from .types import account_type
+from .types import account_type, location_type
 
 
 # Create your models here.
@@ -103,9 +103,19 @@ class AgentData(models.Model):
     createTimestamp = models.DateTimeField()
     updateTimestamp = models.DateTimeField()
     parent = models.IntegerField()
-    geoMunicipio = models.TextField()
+    geoMunicipio = models.TextField(blank=True, null=True)
     latitude = models.DecimalField(max_digits=11, decimal_places=8, blank=True, null=True)
     longitude = models.DecimalField(max_digits=11, decimal_places=8, blank=True, null=True)
 
     def __str__(self):
         return "{} {}, {}, {}.".format(self.id, self.name, self.createTimestamp)
+
+class Edital(models.Model):
+    number = models.IntegerField()
+    subscription_number = models.CharField(max_length=80, default="", blank=True, null=True)
+    project_name = models.TextField()
+    user_name = models.TextField()
+    location = models.CharField(max_length=80, default="", blank=True, null=True)
+    points = models.DecimalField(max_digits=11, decimal_places=8, blank=True, null=True)
+    status = models.CharField(max_length=40, default="", blank=True, null=True)
+    location_type = models.CharField(max_length=60, choices=location_type, blank=True, null=True)
