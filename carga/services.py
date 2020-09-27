@@ -29,7 +29,9 @@ class Service:
                 agent.latitude = _agent['location']['latitude']
                 agent.longitude = _agent['location']['longitude']
                 agent.created_at = _agent['createTimestamp']['date']
-                agent.updated_at = _agent['updateTimestamp']['date']
+                if _agent['updateTimestamp'] is not None:
+                    if _agent['updateTimestamp']['date'] is not None:
+                        agent.updated_at = _agent['updateTimestamp']['date']
                 agent.parent_entity = _agent['parent']
                 agent.mesoregion = _agent['geoMesorregiao']
                 agent.microregion = _agent['geoMicrorregiao']
@@ -42,6 +44,7 @@ class Service:
                 agent.instagram = _agent['instagram']
 
                 agents.append(agent)
+        return agents
 
     @staticmethod
     def fill_agent_dict(worksheet):

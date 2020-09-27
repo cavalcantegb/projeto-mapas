@@ -54,12 +54,32 @@ def upload_file(request):
     This method should be available only if there is no data in the database or user wants to load the agent data from
     Mapa Cultural do Ceará.
 """
+# def carga_agents(request):
+#     if request.method == 'POST':
+#         dados_agentes = open('data/agent_data.json', encoding='utf-8')
+#         agents_json = json.load(dados_agentes)
+#         agents = []
+#         agents = Service.parse_agent_json1(agents_json)
+
+#         for agent in agents:
+#             print(agent)
+#             if agent is not None:
+#                 agent.save()
+
+#     if len(agents) > 0:
+#         HttpResponseRedirect('/carga/agentes')
+
+#     return HttpResponseRedirect('/carga/valeu')
+
+"""
+
+"""
 def carga_agents(request):
     if request.method == 'POST':
-        dados_agentes = open('data/agent_data.json', encoding='utf-8')
-        agents_json = json.load(dados_agentes)
+        # dados_agentes = open('data/agent_data.json', encoding='utf-8')
+        # agents_json = json.load(dados_agentes)
         agents = []
-        agents = Service.parse_agent_json1(agents_json)
+        agents = Service.load_agents2()
 
         for agent in agents:
             print(agent)
@@ -70,9 +90,3 @@ def carga_agents(request):
         HttpResponseRedirect('/carga/agentes')
 
     return HttpResponseRedirect('/carga/valeu')
-
-"""
-
-"""
-# def carga_resultado(request):
-#     if request.method == 'POST':

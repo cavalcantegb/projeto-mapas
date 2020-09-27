@@ -1,0 +1,119 @@
+Barra do Ceará,0.215707870
+Ancuri,0.204302295
+São Bento,0.198287378
+Bom Jardim,0.194886960
+Granja Portugal,0.190184768
+Curió,0.188162399
+Barroso,0.186868904
+Autran Nunes,0.182120826
+Dendê,0.181127137
+Aeroporto (Base Aérea),0.176845246
+Jangurussu,0.172086984
+Granja Lisboa,0.169986701
+Planalto Ayrton Senna,0.168312254
+Praia do Futuro II,0.167904366
+Siqueira,0.148674574
+Genibaú,0.138642057
+Canindezinho,0.136277040
+Parque Presidente Vargas,0.135189475
+Conjunto Palmeiras,0.119471077
+Vila Velha,0.271651977
+Dias Macedo,0.270952025
+Jardim das Oliveiras,0.270016708
+Sabiaguaba,0.267301809
+Pedras,0.263773032
+Bonsucesso,0.262132976
+Coaçu,0.255321217
+Castelão,0.255030710
+Cristo Redentor,0.253841671
+Lagoa Redonda,0.252678506
+Parque Dois Irmãos,0.251057366
+Paupina,0.246110737
+P. Santa Rosa (Apolo XI),0.243125744
+Mondubim (Sede),0.232790791
+Pirambu,0.229828725
+Passaré,0.224672553
+Floresta,0.223828806
+Cais do Porto,0.223566183
+Quintino Cunha,0.222536802
+Pici (Parque Universitário),0.218649272
+Henrique Jorge,0.340810388
+Lagoa da Sapiranga (Coité),0.337820039
+Manuel Dias Branco,0.337196608
+Vicente Pinzon,0.331471934
+Jardim Guanabara,0.325108052
+Dom Lustosa,0.320091710
+Jardim Cearense,0.318152020
+Mata Galinha,0.313129856
+Aerolândia,0.310938006
+Cajazeiras,0.304549738
+Carlito Pamplona,0.299736489
+Manoel Sátiro,0.292158652
+Praia do Futuro I,0.291364499
+Jardim Iracema,0.290124166
+Guajeru,0.288810144
+Conjunto Esperança,0.287965762
+Arraial Moura Brasil,0.284686078
+Parque São José,0.284064862
+João XXIII,0.283709367
+Serrinha,0.282916147
+Vila Ellery,0.415740886
+Jóquei Club (São Cristóvão),0.406362443
+Prefeito José Walter,0.395269872
+Maraponga,0.390382558
+José de Alencar,0.376978555
+Messejana (sede),0.375702403
+Bela Vista,0.375255922
+Itaóca,0.373493056
+Pan-Americano,0.373492529
+Demócrito Rocha,0.369402194
+Itaperi,0.368393967
+Álvaro Weyne,0.364625068
+Conjunto Ceará II,0.361724536
+Couto Fernandes,0.361193041
+Pe. Andrade (Cachoeirinha),0.361176583
+Conjunto Ceará I,0.359970667
+Edson Queiroz,0.350300888
+Antônio Bezerra,0.348284739
+Alto da Balança,0.347135289
+Vila Pery,0.341743529
+Cidade dos Funcionários,0.571862895
+Cidade 2000,0.561946901
+Centro,0.556689243
+Papicu,0.529635268
+Eng. Luciano Cavalcante,0.522377372
+Cambeba,0.517592175
+Damas,0.510646561
+Bom Futuro,0.505352588
+Parque Iracema,0.504953563
+Farias Brito,0.499776808
+São João do Tauape,0.491536866
+Salinas,0.491268617
+Rodolfo Teófilo,0.481883008
+Montese,0.472813897
+Vila União,0.467078586
+Jacarecanga,0.448187913
+Jardim América,0.443687971
+Monte Castelo,0.434517035
+Presidente Kennedy,0.428987851
+Parangaba,0.418919096
+Meireles,0.953077045
+Aldeota,0.866535396
+Estância (Dionísio Torres),0.859689667
+Mucuripe,0.793081592
+Guararapes,0.767800765
+Cocó,0.762265600
+Praia de Iracema,0.720062247
+Varjota,0.717610078
+Fátima,0.694795867
+Joaquim Távora,0.662519548
+Gentilândia,0.660488169
+José Bonifácio,0.643759239
+De Lourdes,0.641826217
+Parquelândia,0.628400920
+Alagadiço,0.594207804
+Amadeu Furtado,0.587662321
+Parque Araxá,0.587354605
+Parque Manibura,0.578017912
+Benfica,0.574172751
+Parreão,0.571950202
