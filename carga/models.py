@@ -1,6 +1,6 @@
 from django.db import models
-from .types import account_type, location_type
-
+from .types import account_type, location_type, edital_type
+from unidecode import unidecode
 
 # Create your models here.
 class Project(models.Model):
@@ -77,10 +77,15 @@ class Agent(models.Model):
     cell_phone = models.CharField(max_length=80, default="", blank=True, null=True)
     location = models.CharField(max_length=200, default="", blank=True, null=True)
     website = models.URLField(max_length=1000, default="", blank=True, null=True)
+    has_website = models.BooleanField(default=False, blank=True, null=True)
     facebook = models.URLField(max_length=1000, default="", blank=True, null=True)
+    has_facebook = models.BooleanField(default=False, blank=True, null=True)
     twitter = models.CharField(max_length=1000, default="", blank=True, null=True)
+    has_twitter = models.BooleanField(default=False, blank=True, null=True)
     google_plus = models.CharField(max_length=1000, default="", blank=True, null=True)
+    has_google_plus = models.BooleanField(default=False, blank=True, null=True)
     instagram = models.CharField(max_length=1000, default="", blank=True, null=True)
+    has_instagram = models.BooleanField(default=False, blank=True, null=True)
     company_name = models.CharField(max_length=500, default="", blank=True, null=True)
     cnpj = models.CharField(max_length=30, default="", blank=True, null=True)
     main_activity = models.CharField(max_length=80, default="", blank=True, null=True)
@@ -92,6 +97,28 @@ class Agent(models.Model):
     city = models.CharField(max_length=80, default="", blank=True, null=True)
     opportunity_tab_name = models.CharField(max_length=1000, default="", blank=True, null=True)
     use_opportunity_tab = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.website is not None:
+            self.has_website = True
+        if self.facebook is not None:
+            self.has_facebook = True
+        if self.twitter is not None:
+            self.has_twitter = True
+        if self.google_plus is not None:
+            self.has_google_plus = True
+        if self.instagram is not None:
+            self.has_instagram = True
+        if self.name is not None:
+            self.name = unidecode(self.name.upper().strip())
+        if self.city is not None:
+            self.city = unidecode(self.city.upper().strip())
+        if self.state is not None:
+            self.state = unidecode(self.state.upper().strip())
+        if self.neighbourhood is not None:
+            self.neighbourhood = unidecode(self.neighbourhood.upper().strip())
+        super(Agent, self).save(*args, **kwargs)
+
 
     def __str__(self):
         return "{} {} {}".format(self.agent_identifier, self.name, self.description_short)
@@ -115,7 +142,13 @@ class Edital(models.Model):
     subscription_number = models.CharField(max_length=80, default="", blank=True, null=True)
     project_name = models.TextField()
     user_name = models.TextField()
-    location = models.CharField(max_length=80, default="", blank=True, null=True)
     points = models.DecimalField(max_digits=11, decimal_places=8, blank=True, null=True)
     status = models.CharField(max_length=40, default="", blank=True, null=True)
     location_type = models.CharField(max_length=60, choices=location_type, blank=True, null=True)
+    city = models.CharField(max_length=200, default="", blank=True, null=True)
+    neighbourhood = models.CharField(max_length=200, default="", blank=True, null=True)
+    edital_type = models.CharField(max_length=80, default="",choices=edital_type, blank=True, null=True)
+
+class Bairro(models.Model):
+    name = models.CharField(max_length=100, default="", blank=True, null=True)
+    idh = models.DecimalField(max_digits=10, decimal_places=8, blank=True, null=True)

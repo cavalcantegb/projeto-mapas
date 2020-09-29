@@ -3,7 +3,6 @@ from .models import Project, Agent
 from .utils import parse_location
 import json
 
-
 agent_files_cities = [
     '2_a_Fortaleza', '2_b_Juazeiro', '2_c_Maracanau',
     '2_d_Crato', '2_e_Caucaia', '2_f_Barbalha',
@@ -33,6 +32,8 @@ class Service:
                     if _agent['updateTimestamp']['date'] is not None:
                         agent.updated_at = _agent['updateTimestamp']['date']
                 agent.parent_entity = _agent['parent']
+                agent.neighbourhood = _agent['En_Bairro']
+                agent.state = _agent['En_Estado']
                 agent.mesoregion = _agent['geoMesorregiao']
                 agent.microregion = _agent['geoMicrorregiao']
                 agent.city = _agent['geoMunicipio']

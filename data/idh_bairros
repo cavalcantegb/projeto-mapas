@@ -7,7 +7,7 @@ Curió,0.188162399
 Barroso,0.186868904
 Autran Nunes,0.182120826
 Dendê,0.181127137
-Aeroporto (Base Aérea),0.176845246
+Aeroporto,0.176845246
 Jangurussu,0.172086984
 Granja Lisboa,0.169986701
 Planalto Ayrton Senna,0.168312254
@@ -29,16 +29,16 @@ Cristo Redentor,0.253841671
 Lagoa Redonda,0.252678506
 Parque Dois Irmãos,0.251057366
 Paupina,0.246110737
-P. Santa Rosa (Apolo XI),0.243125744
-Mondubim (Sede),0.232790791
+P. Santa Rosa,0.243125744
+Mondubim,0.232790791
 Pirambu,0.229828725
 Passaré,0.224672553
 Floresta,0.223828806
 Cais do Porto,0.223566183
 Quintino Cunha,0.222536802
-Pici (Parque Universitário),0.218649272
+Pici,0.218649272
 Henrique Jorge,0.340810388
-Lagoa da Sapiranga (Coité),0.337820039
+Sapiranga,0.337820039
 Manuel Dias Branco,0.337196608
 Vicente Pinzon,0.331471934
 Jardim Guanabara,0.325108052
@@ -58,11 +58,11 @@ Parque São José,0.284064862
 João XXIII,0.283709367
 Serrinha,0.282916147
 Vila Ellery,0.415740886
-Jóquei Club (São Cristóvão),0.406362443
+Jóquei Club,0.406362443
 Prefeito José Walter,0.395269872
 Maraponga,0.390382558
 José de Alencar,0.376978555
-Messejana (sede),0.375702403
+Messejana,0.375702403
 Bela Vista,0.375255922
 Itaóca,0.373493056
 Pan-Americano,0.373492529
@@ -71,7 +71,7 @@ Itaperi,0.368393967
 Álvaro Weyne,0.364625068
 Conjunto Ceará II,0.361724536
 Couto Fernandes,0.361193041
-Pe. Andrade (Cachoeirinha),0.361176583
+Padre Andrade,0.361176583
 Conjunto Ceará I,0.359970667
 Edson Queiroz,0.350300888
 Antônio Bezerra,0.348284739
@@ -99,7 +99,7 @@ Presidente Kennedy,0.428987851
 Parangaba,0.418919096
 Meireles,0.953077045
 Aldeota,0.866535396
-Estância (Dionísio Torres),0.859689667
+Dionísio Torres,0.859689667
 Mucuripe,0.793081592
 Guararapes,0.767800765
 Cocó,0.762265600
