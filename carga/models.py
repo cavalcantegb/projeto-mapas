@@ -44,6 +44,7 @@ class Agent(models.Model):
     created_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
     parent_entity = models.CharField(max_length=200, default="", blank=True, null=True)
+    children_number =  models.IntegerField(default=0, blank=True, null=True)
     public_email = models.EmailField(max_length=200, default="", blank=True, null=True)
     phone = models.CharField(max_length=80, default="", blank=True, null=True)
     address = models.TextField(default="", blank=True, null=True)

@@ -32,6 +32,7 @@ class Service:
                     if _agent['updateTimestamp']['date'] is not None:
                         agent.updated_at = _agent['updateTimestamp']['date']
                 agent.parent_entity = _agent['parent']
+                agent.children_number = len(_agent['children'])
                 agent.neighbourhood = _agent['En_Bairro']
                 agent.state = _agent['En_Estado']
                 agent.mesoregion = _agent['geoMesorregiao']
